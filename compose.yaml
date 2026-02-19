@@ -1,0 +1,23 @@
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: goconmini2026
+    ports:
+      - "43306:3306"
+    volumes:
+      - ./db/mysql/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./db/mysql/02_seed.sql:/docker-entrypoint-initdb.d/02_seed.sql
+
+  postgresql:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: goconmini2026
+    ports:
+      - "55432:5432"
+    volumes:
+      - ./db/postgresql/01_schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+      - ./db/postgresql/02_seed.sql:/docker-entrypoint-initdb.d/02_seed.sql

@@ -1,0 +1,22 @@
+version: "2"
+sql:
+  - engine: "mysql"
+    queries:
+      - "../db/mysql/query.sql"
+    schema: "../db/mysql/01_schema.sql"
+    gen:
+      go:
+        package: "mysqlquery"
+        out: "mysqlquery"
+        emit_result_struct_pointers: true
+        emit_params_struct_pointers: true
+  - engine: "postgresql"
+    queries:
+      - "../db/postgresql/query.sql"
+    schema: "../db/postgresql/01_schema.sql"
+    gen:
+      go:
+        package: "postgresqlquery"
+        out: "postgresqlquery"
+        emit_result_struct_pointers: true
+        emit_params_struct_pointers: true
