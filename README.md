@@ -1,5 +1,7 @@
 [Go Conference mini 2026 in Sendai](https://sendaigo.jp//) の「database/sql/driverを理解してカスタムデータベースドライバーを作る」発表で使用したサンプルコードです。
 
+スライド: https://speakerdeck.com/replu/driver-to-create-a-custom-database-driver
+
 ## 必要なもの
 
 - Go 1.26+
